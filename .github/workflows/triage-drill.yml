@@ -1,0 +1,11 @@
+name: Triage Drill
+on: workflow_dispatch
+jobs:
+  drill:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "drill complete" > summary.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: drill-summary
+          path: summary.txt
